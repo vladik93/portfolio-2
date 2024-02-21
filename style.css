@@ -13,29 +13,103 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
+  background-color: #333;
+  min-height: 100vh;
 }
 
 
 /* HEADER */
 
 header {
-  padding: 3.2rem 1.6rem;
+  padding: 2.4rem 3.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #666;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 
 /* LOGO */
 
-.logo {
-  width: 70px;
-  height: 70px;
+.logo-button {
+  border: none;
+  background: none;
 }
+
+.logo {
+  width: 50px;
+  height: 50px;
+  
+
+}
+
 
 /* MENU */
 
-.header-menu-wrapper button i {
-  font-size: 2.4rem;
+
+.header-menu-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: none;
+  border: none;
+  position: relative;
+  background: rgb(255, 255, 255);
 }
+
+
+
+
+/* HEADER MENU BARS */
+
+.header-menu-bar {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  left: -2.4rem;
+  transition: transform 0.2s ease-in;
+
+}
+
+.header-menu-button span:nth-child(1) {
+  transform: rotate(0deg) translateY(5px);
+}
+
+.header-menu-button span:nth-child(2) {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+
+.header-menu-button.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(0);
+}
+
+.header-menu-button.active span:nth-child(2) {
+  transform: rotate(-45deg) translateY(0);
+}
+
+.header-menu {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  background: #999;  
+  transition: transform 0.5s ease-in;
+
+}
+
+.header-menu.show {
+  transform: translateY(0%);
+}
+
+
+
