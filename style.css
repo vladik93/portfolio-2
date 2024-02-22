@@ -1,5 +1,14 @@
 /* GENERAL */
 
+:root {
+  --color-light: #f4e0d7;
+  --color-tint:  #d3c0a1;
+  --color-accent: #a2806d;
+  --color-dark: #7a4d5c;
+  --color-secondary: #680d5c;
+
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,8 +22,9 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
-  background-color: #333;
+  background-color: var(--color-secondary);
   min-height: 100vh;
+  position: relative;
 }
 
 
@@ -25,7 +35,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #666;
   position: fixed;
   top: 0;
   width: 100%;
@@ -58,8 +67,10 @@ header {
   background: none;
   border: none;
   position: relative;
-  background: rgb(255, 255, 255);
+  margin-right: 2.4rem;
 }
+
+
 
 
 
@@ -73,7 +84,7 @@ header {
   border-radius: 30px;
   position: absolute;
   top: 0;
-  left: -2.4rem;
+  left: 0;
   transition: transform 0.2s ease-in;
 
 }
@@ -102,8 +113,12 @@ header {
   top: 0;
   left: 0;
   transform: translateY(-100%);
-  background: #999;  
+  background: #f4e9d7;  
   transition: transform 0.5s ease-in;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -111,5 +126,33 @@ header {
   transform: translateY(0%);
 }
 
+.menu-nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+}
 
 
+.menu-nav-item {
+  overflow-y: hidden;
+}
+
+.menu-nav-item button {
+  background: none;
+  border: none;
+  font-size: 5.2rem;
+  width: 100%;
+  transform: translateY(100%);
+  animation: textRise 0.5s ease-in forwards;
+}
+
+@keyframes textRise {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
