@@ -27,6 +27,9 @@ body {
   position: relative;
 }
 
+ul {
+  list-style: none;
+}
 
 /* HEADER */
 
@@ -55,23 +58,6 @@ header {
   
 
 }
-
-
-/* MENU */
-
-
-.header-menu-button {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  background: none;
-  border: none;
-  position: relative;
-  margin-right: 2.4rem;
-}
-
-
-
 
 
 
@@ -106,19 +92,24 @@ header {
   transform: rotate(-45deg) translateY(0);
 }
 
+
+/* MENU */
+
 .header-menu {
   position: fixed;
   width: 100%;
   height: 100vh;
+  padding: 2.4rem;
   top: 0;
   left: 0;
   transform: translateY(-100%);
   background: #f4e9d7;  
-  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-out;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 3.2rem;
 
 }
 
@@ -144,15 +135,80 @@ header {
   font-size: 5.2rem;
   width: 100%;
   transform: translateY(100%);
-  animation: textRise 0.5s ease-in forwards;
+  transition: transform 0.5s ease-in 0.5s, opacity 0.2s ease-in;  
+  opacity: 0;
 }
 
-@keyframes textRise {
-  0% {
-    transform: translateY(100%);
-  }
 
-  100% {
-    transform: translateY(0%);
-  }
+.menu-nav-item.show button {
+  transform: translateY(0%);
+  opacity: 1;
+  
 }
+
+.header-menu-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: none;
+  border: none;
+  position: relative;
+  margin-right: 2.4rem;
+}
+
+
+/* MENU SOCIALS */
+
+
+.menu-social-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 3.2rem;
+}
+
+.menu-social-item {
+  position: relative;
+  display: flex;
+  width: 52px;
+  height: 52px;
+  justify-content: center;
+  align-items: center;
+  background: #fff;  
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu-social-item.show:nth-child(1) {
+  transition: opacity 0.5s ease-in 1s;
+}
+
+.menu-social-item.show:nth-child(2) {
+  transition: opacity 0.5s ease-in 1.4s;
+}
+
+.menu-social-item.show:nth-child(3) {
+  transition: opacity 0.5s ease-in 1.8s;
+}
+
+.menu-social-item.show:nth-child(4) {
+  transition: opacity 0.5s ease-in 2.2s;
+}
+
+
+
+.menu-social-item.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.menu-social-item svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
