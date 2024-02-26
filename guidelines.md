@@ -9,3 +9,10 @@
 ### FONT-WEIGHT
 
 300 / 500 / 700
+
+## FONT-FAMILY
+
+- Poppins / 300 / 500 / 700 
+
+- Abril Fatface / 300 / 400 / 700
+

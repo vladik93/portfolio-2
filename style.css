@@ -21,14 +21,30 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   background-color: var(--color-secondary);
-  min-height: 100vh;
   position: relative;
+  min-height: 100vh;
+  height: auto;
 }
 
 ul {
   list-style: none;
+}
+
+
+main {
+  padding-top: 90px;
+  height: 100%;
+
+
+}
+
+/* CONTAINER */
+
+.container {
+  height: 100%;
+  width: 100%;
 }
 
 /* HEADER */
@@ -40,9 +56,12 @@ header {
   align-items: center;
   position: fixed;
   top: 0;
+  height: 90px;
   width: 100%;
   z-index: 100;
+
 }
+
 
 
 /* LOGO */
@@ -55,8 +74,6 @@ header {
 .logo {
   width: 50px;
   height: 50px;
-  
-
 }
 
 
@@ -212,3 +229,36 @@ header {
   transform: translate(-50%, -50%);  
 }
 
+/* HERO SECTION */
+
+.hero-section {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+  
+}
+
+.main-title {
+  font-family: "Karantina", system-ui;
+  font-size: 5.2rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+.main-thin {
+  font-weight: 300;
+}
+
+.main-bold {
+  font-weight: 700;
+  font-size: 6.2rem;
+}
+
+.sub-title {
+  font-size: 1.2rem;
+  text-align: center;
+  padding-bottom: 0.8rem;
+}
