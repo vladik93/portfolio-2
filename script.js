@@ -5,8 +5,6 @@ const headerMenuEl = document.getElementById('header-menu');
 const menuNavItemEls = document.querySelectorAll('.menu-nav-item');
 const menuSocialItemEls = document.querySelectorAll('.menu-social-item');
 
-
-
 let isMenuActive = false;
 
 
@@ -40,3 +38,31 @@ headerMenuBtn.addEventListener('click', () => {
 })
 
 
+// START SECTION
+
+const starSectionEl = document.getElementById('star-section');
+const starEl = document.getElementById('star');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+   if(entry.isIntersecting) {
+    console.log(entry.intersectionRect);
+    window.addEventListener('scroll', () => {
+      starEl.classList.add('animate');
+      starEl.style.animationPlayState = "running";
+      
+    });
+
+    window.addEventListener('scrollend', () => {
+      starEl.style.animationPlayState = "paused";
+    })
+
+
+   
+   }
+  })
+}, {
+  threshold: 0.3
+});
+
+observer.observe(starSectionEl);

@@ -24,28 +24,29 @@ body {
   font-family: "Ubuntu", sans-serif;
   background-color: var(--color-secondary);
   position: relative;
-  min-height: 100vh;
-  height: auto;
+
+
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* overflow-y: scroll; */
 }
 
 ul {
   list-style: none;
 }
 
-
-main {
-  padding-top: 90px;
-  height: 100%;
-
-
+p {
+  font-size: 2rem;
+  font-weight: 500;
 }
+
+section {
+  padding: 2.4rem 3.2rem;
+}
+
 
 /* CONTAINER */
 
-.container {
-  height: 100%;
-  width: 100%;
-}
 
 /* HEADER */
 
@@ -75,6 +76,7 @@ header {
   width: 50px;
   height: 50px;
 }
+
 
 
 
@@ -127,6 +129,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 3.2rem;
+  z-index: 50;
 
 }
 
@@ -171,7 +174,10 @@ header {
   border: none;
   position: relative;
   margin-right: 2.4rem;
+  
 }
+
+/* SECTION */
 
 
 /* MENU SOCIALS */
@@ -229,15 +235,17 @@ header {
   transform: translate(-50%, -50%);  
 }
 
+
 /* HERO SECTION */
 
 .hero-section {
-  
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  margin: 0 auto;
+  min-height: 100vh;
+
+  
   
 }
 
@@ -261,4 +269,45 @@ header {
   font-size: 1.2rem;
   text-align: center;
   padding-bottom: 0.8rem;
+}
+
+/* STAR */
+
+.star-section {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+ 
+}
+
+.star {
+  top: 0%;
+  position: absolute;
+  transform: rotate(0deg);
+}
+
+
+
+.star.animate {
+  animation: animateStar 25s forwards, rotateStar 5s forwards;
+}
+
+@keyframes animateStar {
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes rotateStar {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ABOUT SECTION */
+
+.about-text span {
+  font-size: 3rem;
+  font-weight: 700;
 }
